@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Schadenmeldung</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="module" src="/js/app.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1 id="title"></h1>
+        <div class="logo" id="logo" aria-label="Logo"></div>
+      </header>
+      <p class="legend"><span class="star" aria-hidden="true">*</span> <span id="legend-text"></span></p>
+
+      <form id="report-form" novalidate>
+        <div id="form-body"></div>
+
+        <!-- Spam-Schutz: für Menschen unsichtbar -->
+        <div class="hp" aria-hidden="true">
+          <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <div class="actions">
+          <button type="submit" id="submit-btn">Absenden</button>
+        </div>
+      </form>
+
+      <footer class="contact" id="contact"></footer>
+    </main>
+
+    <div class="confirmation" id="confirmation" role="status" aria-live="polite" hidden>
+      <div class="confirmation-box" id="confirmation-text"></div>
+    </div>
+    <noscript><p class="page">Bitte JavaScript aktivieren, um das Formular zu verwenden.</p></noscript>
+  </body>
+</html>

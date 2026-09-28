@@ -1,0 +1,19 @@
+{
+  "name": "schadenmeldung",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Schadenmeldung – Webformular gemäss Formular_Layout_02.10.2025.xlsx",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test 'test/unit/*.test.js'",
+    "test:e2e": "node --test 'test/e2e/*.test.js'",
+    "test:all": "node --test 'test/**/*.test.js'"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.56.1"
+  }
+}

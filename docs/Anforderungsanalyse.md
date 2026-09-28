@@ -167,3 +167,22 @@ Typ-Angaben geben nur wieder, was die Vorlage zeigt («X» = Auswahl, «+» = we
 | C21 Zugriff | Öffentlich per Link; unsichtbarer Spam-Schutz (Honeypot, Limit pro IP). |
 
 Noch offen (blockiert die Implementierung nicht): Empfängeradresse Bauführer/Disponent (C6), Frage C129, Logo-Datei, Resend-API-Key und Absender-Domain.
+
+---
+
+## E. Technische Festlegungen bei der Umsetzung (zur Kenntnis / Prüfung)
+
+Diese Punkte waren für die Umsetzung nötig, stehen aber nicht in der Vorlage. Bitte bei Bedarf korrigieren.
+
+| Punkt | Umsetzung |
+|-------|-----------|
+| Absende-Schaltfläche | Beschriftung «Absenden» (abgeleitet aus B146 «Nach dem Absenden»), nach dem Feld «Verfasser:», vor «Fragen?» |
+| Bestätigung | Wird 8 Sekunden angezeigt, danach leeres Formular |
+| Hinweis D119 | Wird nicht im Formular angezeigt (Funktionsbeschreibung, kein Benutzertext) |
+| Frage C129 | Wird nicht angezeigt |
+| «Weitere Fotos» | Jedes zusätzliche Upload-Feld heisst «Foto hochladen» |
+| Fehlermeldungen | «Pflichtfeld», «Bitte mindestens eine Auswahl treffen.», «Bitte die markierten Felder prüfen.», «Die Schadenmeldung konnte nicht gesendet werden. Bitte erneut versuchen.», Hinweise zu Dateityp/-grösse und Datums-/E-Mail-Format |
+| E-Mail Meldung | Betreff «Schadenmeldung – ‹Erfassungsdatum› – ‹Verfasser›»; Inhalt: alle Felder in Reihenfolge der Vorlage, Anhänge nummeriert |
+| E-Mail «Fehlerhafte Pläne» | Betreff «Schadenmeldung – Fehlerhafte Pläne»; Text «Pläne an schaden@tozzo.ch zuzustellen» plus Baustellennummer, Adresse, Datum/Uhrzeit, Bauführer/Disponent, Verfasser zur Zuordnung. Wird beim Absenden der Meldung verschickt. |
+| Fotos | Bilder > 1 MB werden im Browser auf max. 2000 px verkleinert (JPEG). HEIC wird nur verkleinert, wenn der Browser es lesen kann (Safari), sonst Original. |
+| Sicherheit | Dateityp-Prüfung anhand des Inhalts, HTML-Maskierung in E-Mails, Honeypot, max. 10 Meldungen / 10 Min. pro IP, Content-Security-Policy, keine Speicherung, Idempotency-Key gegen doppelte Mails bei Wiederholung |
