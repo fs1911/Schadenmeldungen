@@ -138,3 +138,32 @@ Typ-Angaben geben nur wieder, was die Vorlage zeigt («X» = Auswahl, «+» = we
 - **C22** Aufbewahrungsdauer der Personendaten und Uploads (Datenschutz revDSG).
 - **C23** Sprache: nur Deutsch (Schweizer Schreibweise «ss»)?
 - **C24** Zielgeräte: Smartphone (Kamera für «Fotomöglichkeit») und Desktop?
+
+---
+
+## D. Entscheidungen (Rückmeldung Auftraggeber)
+
+| Punkt | Entscheidung |
+|-------|--------------|
+| C1/C2 Schadenverursacher | Genau 1 Option wählbar; nur die Felder der gewählten Option werden angezeigt; die Sternchen (A14, D14) gelten nur dort. Die Auswahl selbst ist Pflicht (A11). |
+| C3 Ja/Nein-Fragen | Auswahl «Ja» / «Nein» (nicht Pflicht). |
+| C4 «+» | Beliebig oft. Inventar: je Klick ein Block (Bezeichnung, Nummer/Mietnummer, Kontrollschild). Fotos: je Klick ein weiteres Upload-Feld. |
+| C5 Uploads | JPG, PNG, HEIC, PDF; max. 10 MB pro Datei. |
+| Gesamtgrösse | Ziel: max. 35 MB pro Meldung, Bilder werden im Browser verkleinert. **Test auf Netlify: max. 5 MB gesamt** (6-MB-Limit der Netlify-Funktionen). |
+| C6 Fehlerhafte Pläne | Automatische Nachricht an Bauführer/Disponent mit dem Hinweis «Pläne an schaden@tozzo.ch zuzustellen». Empfängeradresse folgt später; **im Test an filip.subara@tozzo.ch** (konfigurierbar). |
+| C7 Bauführer / Disponent | Freitextfeld; Frage C129 bleibt offen und wird nicht angezeigt; kein Freigabeprozess. |
+| C8 Erfassungsdatum | Mit heutigem Datum vorbelegt (TT.MM.JJJJ), änderbar. |
+| C9 Verfasser | Freie Eingabe, kein Login. |
+| C10 Datum / Uhrzeit | Ein Feld mit Datum und Uhrzeit, nicht vorbelegt. |
+| C10 Schadensumme | Freitext mit Einheit «CHF». |
+| C10 Prüfung | Nur E-Mail-Felder werden (falls ausgefüllt) auf gültiges Format geprüft; Telefonnummer Freitext. |
+| C11 selbstlöschend | Bestätigung verschwindet nach einigen Sekunden, danach leeres Formular. |
+| C12 Absenden | Nur E-Mail (inkl. Anhänge), keine Datenbank. Empfänger produktiv schaden@tozzo.ch, **im Test filip.subara@tozzo.ch** (konfigurierbar). Es werden keine Meldungen serverseitig gespeichert. |
+| C13 Min. 1 Checkbox | Übernommen für «Was wurde beschädigt?» und «Warum ist der Schaden entstanden?» (beide Mehrfachauswahl). |
+| C14/C15 Texte | Nur Excel-Überschriften (keine zusätzlichen Bereichstitel); Tippfehler korrigiert: «Verantwortlicher», «Schadenfalls». |
+| C16/C17 Kopf | Platzhalter «LOGO»; Legende «* Pflichtfelder» wird angezeigt. |
+| C18 Hosting | Test: Netlify. Später: Tozzo-Server (App muss dafür portierbar sein). |
+| C20 Mail-Dienst | Resend; Account, API-Key und Domain-Verifizierung stellt der Auftraggeber bereit. |
+| C21 Zugriff | Öffentlich per Link; unsichtbarer Spam-Schutz (Honeypot, Limit pro IP). |
+
+Noch offen (blockiert die Implementierung nicht): Empfängeradresse Bauführer/Disponent (C6), Frage C129, Logo-Datei, Resend-API-Key und Absender-Domain.
